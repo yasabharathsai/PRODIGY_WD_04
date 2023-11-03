@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>PERSONAL PORTFOLIO</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/34d6af3232.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+       <div id="header">
+            <div class="container">
+                <nav>
+                    <img src="images/logo y.jpeg" class="logo">
+                    <ul>
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">contact</a></li>
+                        <i class="fas fa-times"></i>
+                    </ul>
+                    <i class="fas fa-bars"></i>
+                </nav>
+                <div class="header-text">
+                   
+                    <h1>Hello,I'm <span>YASA BHARATHSAI</span> </h1>
+                </div>
+            </div>
+
+        </div>
+
+<!-------about me-->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/bharathsai(1).jpg" class="pic">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>My name is Yasa Bharathsai and i was born on April 4th 2002 in khammaam .My parents Yasa Veerabhadra Rao(father) ,Yasa Rohini(mother)
+                    I started my education journey in my village Thanikella and completed upto 10th class in ST.Aloysius E.M High School and i got gpa 9.5/10
+                    And later i moved a step forward to hyderabad from my city Khammam and completed intermediate in Narayana junior college and i got 969/1000 marks.
+                    And through Eamcet rank 8097 i entered into vardhaman college of engineering and currently studying B-Tech 4th year Cse.My hobbies are playing cricket,reading news,watching 
+                    cricket and learning new things.
+
+                </p>
+                <div class ="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                    <p class="tab-links" onclick="opentab('projects')">projects</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Python</span></li>
+                        <li><span>Java</span></li>
+                        <li><span>C</span></li>
+                        <li><span>HTML</span></li>
+                        <li><span>CSS</span></li>
+                        <li><span>Javascript</span></li>
+                        <li><span>SQL</span></li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li>B-Tech 2020-2024<br><span>Vardhaman college of engineering </span></li>
+                        <li>intermediate 2018-2020<br><span>Narayana junior college </span></li>
+                        <li>SSC 2018<br><span>ST.Aloysius E.M High School </span></li>
+                        
+                    </ul>
+                </div>
+                <div class="tab-contents" id="projects">
+                    <ul>
+                        <li><span>Soil moisture prediction using machine learning</span></li>
+                        <li><span>portfolio</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<center><a href="#" class="btn">See More</a></center>
+<!------------------contact------->
+
+<div id="contact">
+    <div class ="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>yasabharathsai@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>7569605869</p>
+                <div class="social-icons">
+                <a href="https://facbook.com/"><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-twitter-square"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+            <a href="images/YASA BHARATHSAI (1).pdf" download class="btn btn2"> Download CV</a>
+        </div>
+            
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <script>
+     var tablinks=document.getElementsByClassName("tab-links");
+     var tabcontents=document.getElementsByClassName("tab-contents");
+     function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+     }
+
+    </script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwXMHuPcNX-XRG3FMnHUFCWxUNPg4hb_1hNaWK7c2D3TMjhLnjNJae0Jq6NmgyBdK5W/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+    </body>
+</html>
